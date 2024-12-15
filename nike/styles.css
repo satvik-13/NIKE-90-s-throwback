@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --primary-color: #F22E2E;
+    --secondary-color: #000000;
+    --accent-color: #FFD700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000000;
+    background-image: url('https://example.com/michael-jordan-bg.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--accent-color);
+}
+
+body {
+    background-color: #000000;
+    background-image: url('nike-logo.png'); /* Replace with your Nike logo image path */
+    background-size: cover; /* Ensure the logo covers the entire screen */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9; /* Adjust transparency (0.1 = 10% transparent) */
+}
+
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border: 2px solid var(--primary-color);
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://example.com/rotating-nike-logo.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.glitch-text {
+    font-size: 3em;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 
+        0.05em 0 0 #00fffc,
+        -0.03em -0.03em 0 #fc00ff,
+        0.025em 0.05em 0 #fffc00;
+    animation: glitch 500ms infinite alternate-reverse;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 
+            0.05em 0 0 #00fffc,
+            -0.03em -0.03em 0 #fc00ff,
+            0.025em 0.05em 0 #fffc00;
+    }
+    15% {
+        text-shadow: 
+            0.05em 0 0 #00fffc,
+            -0.03em -0.03em 0 #fc00ff,
+            0.025em 0.05em 0 #fffc00;
+    }
+    16% {
+        text-shadow: 
+            -0.05em -0.025em 0 #00fffc,
+            0.025em 0.035em 0 #fc00ff,
+            -0.05em -0.05em 0 #fffc00;
+    }
+    49% {
+        text-shadow: 
+            -0.05em -0.025em 0 #00fffc,
+            0.025em 0.035em 0 #fc00ff,
+            -0.05em -0.05em 0 #fffc00;
+    }
+    50% {
+        text-shadow: 
+            0.05em 0.035em 0 #00fffc,
+            0.03em 0 0 #fc00ff,
+            0 -0.05em 0 #fffc00;
+    }
+    99% {
+        text-shadow: 
+            0.05em 0.035em 0 #00fffc,
+            0.03em 0 0 #fc00ff,
+            0 -0.05em 0 #fffc00;
+    }
+    100% {
+        text-shadow: 
+            -0.05em 0 0 #00fffc,
+            -0.025em -0.025em 0 #fc00ff,
+            -0.05em -0.05em 0 #fffc00;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--secondary-color);
+    padding: 10px;
+}
+
+.nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    border: 2px solid var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,46,46,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product:hover .product-overlay {
+    opacity: 1;
+}
+
+.rad-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--secondary-color);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.rad-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+.product-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.product {
+    min-width: 300px; /* Adjust as needed */
+    margin-right: 20px; /* Space between products */
+    transition: transform 0.3s ease-in-out;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.slider-btn:hover {
+    background-color: var(--secondary-color);
+}
